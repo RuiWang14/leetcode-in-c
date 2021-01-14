@@ -1,9 +1,21 @@
-#include <stdio.h>
-static int test2 = 8;
+#include "stdio.h"
+
+#define a (x + 1)
+
+int x = 2;
+
+void c() {
+    printf("c = %d\n", a);
+}
+
+void b() {
+    int x = 1;
+    printf("b = %d\n", a);
+    c();
+}
+
+
 int main() {
-    static int test;
-    register int *num = &test;
-    int *num2 = &test2;
-    printf("Hello, World! %d\n", *num);
-    return 0;
+    b();
+//    c();
 }
